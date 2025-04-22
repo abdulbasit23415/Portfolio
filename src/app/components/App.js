@@ -30,7 +30,7 @@ function App() {
           </div>
         </div>
       
-      <Navbar shouldHideOnScroll className='absolute top-0 left-0 text-White pt-8 '>
+      <Navbar shouldHideOnScroll className='absolute top-0 left-0 text-White pt-5 '>
         <NavbarBrand>
           <AchmeLogo />
           <h1 className="font-bold text-white"><span className='text-[#ff4b5c] text-2xl '>A</span>BDULBASIT</h1>
