@@ -45,7 +45,11 @@ function MyCard({repo}) {
       <h1 className='font-bold  text-lg '>{repos.name}</h1>
    
       <p className='mt-3'>
-  {repos.description.length > 100 ? repos.description.slice(0, 100) + '...' : repos.description}
+  {repos.description
+  ? repos.description.length > 100
+    ? repos.description.slice(0, 100) + '...'
+    : repos.description
+  : 'No description available.'}
 </p>
    
     </a>
