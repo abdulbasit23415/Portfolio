@@ -12,15 +12,16 @@ import {
 import AchmeLogo from './AchmeLogo';
 import { FaGithub } from "react-icons/fa";
 import { IoLogoLinkedin } from "react-icons/io5";
+import Image from 'next/image';
 
 function App() {
   return (
     <div className='text-white'>
      
-        <img src="/pimage3.jpg" className='w-[100%] h-[600px]' />
+        <Image width={1000} height={1000} alt={""} priority={false} src="/pimage3.jpg" className='w-[100%] h-[600px]' />
         <div className="absolute top-0 left-0 w-full h-full flex justify-center items-center">
           <div className="flex flex-col items-center">
-            <img src="/myimage2.jpeg" className='w-[150px] h-[150px] border-gray-900 rounded-full' />
+            <Image width={1000} height={1000} alt={""} priority={false} src="/myimage2.jpeg" className='w-[150px] h-[150px] border-gray-900 rounded-full' />
             <h1 className="font-bold text-[#ff4b5c] text-3xl mt-4">ABDUL BASIT</h1>
             <p className=" text-white  mt-4">Python developer with expertise in Node.js for both frontend and backend development.</p>
           </div>

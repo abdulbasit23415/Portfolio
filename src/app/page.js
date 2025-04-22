@@ -8,7 +8,7 @@ import App from './components/App';
 import { Button } from '@/components/ui/button';
 import { ImLink } from "react-icons/im";
 import MyCard from './components/MyCard';
- function page() {
+ function Page() {
   const[repo,setRepos] = useState([]);
   useEffect(()=>{
     fetchRepos()
@@ -32,4 +32,4 @@ import MyCard from './components/MyCard';
   )
 }
 
-export default page
+export default Page

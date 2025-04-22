@@ -1,4 +1,5 @@
 import { Button } from '@/components/ui/button'
+import Image from 'next/image'
 import React from 'react'
 import { ImLink } from 'react-icons/im'
 
@@ -6,7 +7,11 @@ function MyCard({repo}) {
   return (
     <div>
       <div className='flex ' >
-        <img src="/myimage2.jpeg" className='w-[200px] h-[200px] my-5 mx-32 border-gray-900 rounded-xs  '/>
+        <Image src="/myimage2.jpeg" className='w-[200px] h-[200px] my-5 mx-32 border-gray-900 rounded-xs  '
+        width={1000}
+        height={1000}
+        priority={false}
+        alt={"My Image"} />
         <div className='my-5' >
         <h1 className='text-[#ff4b5c] font-bold text-md'>Discover</h1>
         
