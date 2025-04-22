@@ -21,13 +21,16 @@ function App() {
         <Image width={1000} height={1000} alt={""} priority={false} src="/pimage3.jpg" className='w-[100%] h-[600px]' />
         <div className="absolute top-0 left-0 w-full h-full flex justify-center items-center">
           <div className="flex flex-col items-center">
-            <Image width={1000} height={1000} alt={""} priority={false} src="/myimage2.jpeg" className='w-[150px] h-[150px] border-gray-900 rounded-full' />
-            <h1 className="font-bold text-[#ff4b5c] text-3xl mt-4">ABDUL BASIT</h1>
-            <p className=" text-white  mt-4">Python developer with expertise in Node.js for both frontend and backend development.</p>
+            <Image width={1000} height={1000} alt={""} priority={false} src="/myimage3.jpeg" className='w-[200px] h-[200px] border-gray-900 rounded-full' />
+            <h1 className="font-bold text-[#ff4b5c] text-[33px] mt-4">ABDUL BASIT</h1>
+            <div className="text-center ">
+            <p>Python & Node.js developer.</p>
+            
+          </div>
           </div>
         </div>
       
-      <Navbar shouldHideOnScroll className='absolute top-0 left-0 text-White '>
+      <Navbar shouldHideOnScroll className='absolute top-0 left-0 text-White pt-8 '>
         <NavbarBrand>
           <AchmeLogo />
           <h1 className="font-bold text-white"><span className='text-[#ff4b5c] text-2xl '>A</span>BDULBASIT</h1>

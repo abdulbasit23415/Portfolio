@@ -23,7 +23,7 @@ import MyCard from './components/MyCard';
     
   }
   return (
-    <div className='bg-gray-950 min-h-screen  '>
+    <div className=' bg-[#1F2233] min-h-screen  '>
         <App/>
   <MyCard repo={repo } />
        </div> 

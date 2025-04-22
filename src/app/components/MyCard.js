@@ -7,7 +7,7 @@ function MyCard({repo}) {
   return (
     <div>
       <div className='flex ' >
-        <Image src="/myimage2.jpeg" className='w-[200px] h-[200px] my-5 mx-32 border-gray-900 rounded-xs  '
+        <Image src="/myimage2.jpeg" className='w-[350px] h-[397px] my-9 mx-32  border-gray-900 rounded-xs  '
         width={1000}
         height={1000}
         priority={false}
@@ -17,13 +17,13 @@ function MyCard({repo}) {
         
         <h2 className=' font-stretch-200% font-bold text-5xl text-white '>About Me</h2>
         <div className="w-[9%] h-[2px] bg-[#ff4b5c] my-2 " />
-       <p className='text-white'> I’m a BS Data Science student and Python developer with skills in both frontend and backend using Node.js. I enjoy building full-stack applications and data-driven solutions that are efficient, scalable, and user-focused.</p>
-       <div className='  border-[#ff4b5c] border-2 my-5 px-5 py-5 grid grid-cols-2 gap-5 font-bold text-white h-40 w-[90%] '>
+       <p className='text-white pr-20 text-justify'> I’m a BS Data Science student and Python developer with skills in both frontend and backend using Node.js. I enjoy building full-stack applications and data-driven solutions that are efficient, scalable, and user-focused.</p>
+       <div className='  border-[#ff4b5c] border-2 my-5  px-5 py-5 grid grid-cols-2 gap-5 font-bold text-white h-48 w-[91%]  '>
         <h1>Name: ABDULBASIT</h1>
         <h1>Age: 21</h1>
-        <h1>Phone No: 03191533977</h1>
+        <h1>Location: Lahore, Pakistan</h1>
         <h1>Email: kashifabdulbasit@gmail.com</h1>
-        <h1>Address: Sabzazar,Lahore</h1>
+        <h1>skills: Python, Node.js(frontend,backend CMS), ML, SQL</h1>
         <h1>Education: Undergraduate(6th Semester)</h1>
        </div>
        <a href="/Abdul Basit cv1.pdf" target="_blank" rel="noopener noreferrer">
@@ -32,26 +32,31 @@ function MyCard({repo}) {
        </div>
        
        </div>
-       <div className='bg-gray-900 min-h-screen   py-10 px-20 text-white  '>
+       <div className='bg-[#25273E] min-h-screen   py-10 px-20 text-white  '>
         
         <h1 className='text-[#ff4b5c] font-bold text-md'>What I Do</h1>
         <h1 className=' font-stretch-200% font-bold text-4xl  '>My Projects</h1>
-        <div className="w-[4%] h-[2px] bg-[#ff4b5c] my-2" />
+        <div className="w-[4%] h-[2px] bg-[#ff4b5c] my-5" />
         <div className='grid grid-cols-3 gap-10 '>
         {repo.map((repos) => (
   <div key={repos.id} >
     <a href={repos.html_url} target="_blank" rel="noopener noreferrer" className='border-[#ff4b5c] border-2 px-5 py-5 block'>
       <ImLink/>
-      <h1 className='font-bold  text-lg'>{repos.name}</h1>
-      <p className='mt-3'>A practical project built to enhance development skills and apply core programming concepts. It reflects my ability to deliver clean, functional, and user-oriented solutions using modern technologies.</p>
+      <h1 className='font-bold  text-lg '>{repos.name}</h1>
+   
+      <p className='mt-3'>
+  {repos.description.length > 100 ? repos.description.slice(0, 100) + '...' : repos.description}
+</p>
+   
     </a>
   </div>
 ))}
+  </div>
 
        </div>
        </div>
         
-    </div>
+    
   )
 }
 
