@@ -16,7 +16,7 @@ import Image from 'next/image';
 
 function App() {
   return (
-    <div className='text-white'>
+    <div className='text-white   '>
      
         <Image width={1000} height={1000} alt={""} priority={false} src="/pimage3.jpg" className='w-[100%] h-[600px]' />
         <div className="absolute top-0 left-0 w-full h-full flex justify-center items-center">
@@ -30,12 +30,12 @@ function App() {
           </div>
         </div>
       
-      <Navbar shouldHideOnScroll className='absolute top-0 left-0 text-White pt-5 '>
+      <Navbar shouldHideOnScroll className='fixed top-0 left-[-25] z-50 shadow-md text-White pt-5 '>
         <NavbarBrand>
           <AchmeLogo />
           <h1 className="font-bold text-white"><span className='text-[#ff4b5c] text-2xl '>A</span>BDULBASIT</h1>
         </NavbarBrand>
-        <NavbarContent className="hidden sm:flex gap-10 mx-96">
+        <NavbarContent className=" sm:flex  ">
           <NavbarItem>
             <HeroLink color="foreground" href="https://github.com/abdulbasit23415" className='font-bold'>
               <FaGithub />
