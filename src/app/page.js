@@ -25,13 +25,13 @@ function Page() {
   }
 
   return (
-    <div className='bg-[#1F2233] min-h-screen'>
+    <div className=' sm:h-screen '>
       {/* Suspense wrapper for lazy-loaded components */}
       <Suspense fallback={<div className="text-white">Loading App...</div>}>
         <App />
       </Suspense>
       <Suspense fallback={<div className="text-white">Loading Projects...</div>}>
-        <MyCard repo={repo} />
+        <MyCard  repo={repo} />
       </Suspense>
     </div>
   );
