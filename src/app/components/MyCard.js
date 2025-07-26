@@ -8,7 +8,6 @@ import { Mail, MapPin, User, Calendar, GraduationCap, Code } from "lucide-react"
 function MyCard({ repo }) {
   const personalInfo = [
     { icon: User, label: "Name", value: "ABDULBASIT" },
-    { icon: Calendar, label: "Age", value: "21" },
     { icon: MapPin, label: "Location", value: "Lahore, Pakistan" },
     { icon: Mail, label: "Email", value: "kashifabdulbasit@gmail.com" },
     { icon: Code, label: "Skills", value: "Python, Node.js, ML, SQL" },
@@ -43,15 +42,13 @@ function MyCard({ repo }) {
               <div className="w-16 h-0.5 bg-[#ff4b5c] mx-auto lg:mx-0 mb-6"></div>
             </div>
 
-            <p className="text-gray-300 text-sm sm:text-base lg:text-lg leading-relaxed mb-8 max-w-2xl mx-auto lg:mx-0">
-              I'm a BS Data Science student and Python developer with skills in both frontend and backend using Node.js.
-              I enjoy building full-stack applications and data-driven solutions that are efficient, scalable, and
-              user-focused.
+            <p className="text-gray-300 text-sm sm:text-base lg:text-lg leading-relaxed mb-8 max-w-2xl mx-auto text-justify lg:mx-0 ">
+              Python developer and full-stack engineer with a strong focus on data-driven applications and intelligent systems. I build scalable, efficient solutions using modern technologies like Node.js, Next.js, and Tailwind, blending backend logic with seamless user experiences. My work often integrates machine learning, automation, and real-world problem-solving, ranging from finance and education to healthcare. Passionate about creating impactful tech that’s both innovative and practical
             </p>
 
             {/* Personal Info Grid */}
             <div className="border-2 border-[#ff4b5c] rounded-lg p-4 sm:p-6 mb-8 bg-gray-800/50 backdrop-blur-sm">
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 text-white">
+              <div className="grid text-left sm:grid-cols-2 gap-4 text-white">
                 {personalInfo.map((info, index) => {
                   const IconComponent = info.icon
                   return (
@@ -81,8 +78,8 @@ function MyCard({ repo }) {
       </div>
 
       {/* Projects Section */}
-      <div className="bg-[#25273E] min-h-screen py-12 lg:py-20">
-        <div className="container mx-auto px-4">
+      <div className="bg-[#25273E] min-h-screen py-10 lg:py-20">
+        <div className="container mx-auto px-5">
           <div className="text-center lg:text-left mb-12">
             <h1 className="text-[#ff4b5c] font-bold text-sm sm:text-base mb-2 tracking-wider uppercase">What I Do</h1>
             <h2 className="font-bold text-3xl sm:text-4xl lg:text-5xl text-white mb-4">My Projects</h2>

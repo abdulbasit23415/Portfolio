@@ -24,8 +24,8 @@ function App() {
             <Image width={1000} height={1000} alt={""} priority={false} src="/myimage3.jpeg" className='w-[200px] h-[200px] border-gray-900 rounded-full' />
             <h1 className="font-bold text-[#ff4b5c] text-[33px] mt-4">ABDUL BASIT</h1>
             <div className="text-center ">
-            <p>Python & Node.js developer.</p>
-            
+            <p>Data Scientist & Web Developer.</p>
+
           </div>
           </div>
         </div>
