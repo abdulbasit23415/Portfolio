@@ -68,7 +68,7 @@ function MyCard({ repo }) {
             </div>
 
             {/* Resume Button */}
-            <a href="/Abdul Basit cv1.pdf" target="_blank" rel="noopener noreferrer">
+            <a href="/ABDUL BASIt CV 1.pdf" target="_blank" rel="noopener noreferrer">
               <Button className="bg-[#ff4b5c] hover:bg-[#ff4b5c]/90 text-white px-8 py-3 rounded-lg font-semibold transition-all duration-300 transform hover:scale-105 shadow-lg">
                 Download Resume
               </Button>
