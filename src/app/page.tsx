@@ -7,10 +7,13 @@ import { ProjectsSection } from '@/components/sections/Projects'
 import { ExperienceSection } from '@/components/sections/Experience'
 import { ContactSection } from '@/components/sections/Contact'
 import { Footer } from '@/components/Footer'
+import { ScrollProgress } from '@/components/ui/ScrollProgress'
+import { BackToTop } from '@/components/ui/BackToTop'
 
 export default function Home() {
   return (
     <main className="bg-background text-foreground">
+      <ScrollProgress />
       <Navigation />
       <HeroSection />
       <AboutSection />
@@ -20,6 +23,7 @@ export default function Home() {
       <ExperienceSection />
       <ContactSection />
       <Footer />
+      <BackToTop />
     </main>
   )
 }

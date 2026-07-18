@@ -14,9 +14,9 @@ const spaceGrotesk = Space_Grotesk({
 })
 
 export const metadata: Metadata = {
-  title: 'Premium Portfolio | Award-Winning Developer',
-  description: 'Discover an award-winning portfolio featuring cutting-edge design, 3D animations, and premium development expertise.',
-  generator: 'v0.app',
+  title: 'Abdul Basit | AI Engineer & Full-Stack Developer',
+  description: 'AI Engineer and Full-Stack Developer specializing in LLMs, RAG pipelines, machine learning, and modern web applications. Explore my portfolio of AI-powered projects.',
+  generator: 'Next.js',
   icons: {
     icon: [
       {
@@ -35,8 +35,8 @@ export const metadata: Metadata = {
     apple: '/apple-icon.png',
   },
   openGraph: {
-    title: 'Premium Portfolio | Award-Winning Developer',
-    description: 'Discover an award-winning portfolio featuring cutting-edge design, 3D animations, and premium development expertise.',
+    title: 'Abdul Basit | AI Engineer & Full-Stack Developer',
+    description: 'AI Engineer and Full-Stack Developer specializing in LLMs, RAG pipelines, machine learning, and modern web applications.',
     type: 'website',
   },
 }
@@ -60,7 +60,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={`dark ${inter.variable} ${spaceGrotesk.variable}`}>
-      <body className="antialiased bg-background text-foreground font-sans">
+      <body className="antialiased bg-background text-foreground font-sans noise-overlay">
         {children}
         {process.env.NODE_ENV === 'production' && <Analytics />}
       </body>
