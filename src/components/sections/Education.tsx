@@ -33,7 +33,6 @@ const education = [
     technologies: ['HTML', 'CSS', 'JavaScript', 'C++'],
   },
 ]
-
 export function EducationSection() {
   return (
     <section id="education" className="py-20 md:py-32 relative overflow-hidden">
