@@ -55,7 +55,7 @@ export function AboutSection() {
                   <div className="absolute inset-0 rounded-3xl bg-background m-[2px]" />
                   <div className="absolute inset-[3px] rounded-[calc(1.5rem-3px)] overflow-hidden bg-white/5 backdrop-blur-sm">
                     <Image
-                      src="/profile.png"
+                      src="/profile-v2.png"
                       alt="Abdul Basit"
                       fill
                       className="object-cover"

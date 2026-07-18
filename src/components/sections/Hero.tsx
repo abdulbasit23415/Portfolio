@@ -134,7 +134,7 @@ export function HeroSection() {
                 <div className="absolute inset-0 rounded-full bg-background" />
                 <div className="absolute inset-1 rounded-full overflow-hidden bg-white/5 backdrop-blur-sm">
                   <Image
-                    src="/profile.png"
+                    src="/profile-v2.png"
                     alt="Abdul Basit - AI Engineer & Full-Stack Developer"
                     fill
                     className="object-cover"
