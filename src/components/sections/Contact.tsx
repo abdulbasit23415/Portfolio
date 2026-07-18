@@ -1,12 +1,53 @@
 'use client'
 
-import React from 'react'
+import React, { useState } from 'react'
 import { SectionTitle } from '@/components/ui/SectionTitle'
 import { ScrollReveal } from '@/components/animations/ScrollReveal'
 import { GlassCard } from '@/components/ui/GlassCard'
-import { Mail, Github, Linkedin, Globe, MapPin, Phone, Send } from 'lucide-react'
+import { Mail, Github, Linkedin, Globe, MapPin, Phone, Send, Loader2, CheckCircle2 } from 'lucide-react'
 
 export function ContactSection() {
+  const [isSubmitting, setIsSubmitting] = useState(false)
+  const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle')
+  const [errorMessage, setErrorMessage] = useState('')
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault()
+    setIsSubmitting(true)
+    setSubmitStatus('idle')
+    setErrorMessage('')
+
+    const formData = new FormData(e.currentTarget)
+    const data = {
+      name: formData.get('name'),
+      email: formData.get('email'),
+      subject: formData.get('subject'),
+      message: formData.get('message'),
+    }
+
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(data),
+      })
+
+      const result = await response.json()
+
+      if (!response.ok) {
+        throw new Error(result.error || 'Failed to send message')
+      }
+
+      setSubmitStatus('success')
+      ;(e.target as HTMLFormElement).reset()
+    } catch (error) {
+      setSubmitStatus('error')
+      setErrorMessage(error instanceof Error ? error.message : 'An error occurred')
+    } finally {
+      setIsSubmitting(false)
+    }
+  }
+
   const socialLinks = [
     { icon: Mail, href: 'mailto:kashifabdulbasit@gmail.com', label: 'Email', brand: 'email' },
     { icon: Linkedin, href: 'https://linkedin.com/in/abdulbasit-kashif0003', label: 'LinkedIn', brand: 'linkedin' },
@@ -32,12 +73,7 @@ export function ContactSection() {
             <GlassCard hover={false} className="!p-0 overflow-hidden">
               <div className="bg-gradient-to-br from-primary/5 to-accent/5 p-8">
                 <h3 className="text-xl font-bold text-foreground mb-6">Send a Message</h3>
-                <form
-                  action="mailto:kashifabdulbasit@gmail.com"
-                  method="POST"
-                  encType="text/plain"
-                  className="space-y-5"
-                >
+                <form onSubmit={handleSubmit} className="space-y-5">
                   <div className="grid sm:grid-cols-2 gap-4">
                     <div>
                       <label htmlFor="contact-name" className="block text-sm font-medium text-muted-foreground mb-2">Name</label>
@@ -48,6 +84,7 @@ export function ContactSection() {
                         placeholder="Your name"
                         className="form-input"
                         required
+                        disabled={isSubmitting}
                       />
                     </div>
                     <div>
@@ -59,6 +96,7 @@ export function ContactSection() {
                         placeholder="your@email.com"
                         className="form-input"
                         required
+                        disabled={isSubmitting}
                       />
                     </div>
                   </div>
@@ -72,6 +110,7 @@ export function ContactSection() {
                       placeholder="Project inquiry..."
                       className="form-input"
                       required
+                      disabled={isSubmitting}
                     />
                   </div>
 
@@ -84,15 +123,39 @@ export function ContactSection() {
                       placeholder="Tell me about your project..."
                       className="form-input resize-none"
                       required
+                      disabled={isSubmitting}
                     />
                   </div>
 
+                  {submitStatus === 'error' && (
+                    <div className="p-3 text-sm text-red-500 bg-red-500/10 border border-red-500/20 rounded-lg">
+                      {errorMessage}
+                    </div>
+                  )}
+
+                  {submitStatus === 'success' && (
+                    <div className="p-3 text-sm text-emerald-500 bg-emerald-500/10 border border-emerald-500/20 rounded-lg flex items-center gap-2">
+                      <CheckCircle2 size={16} />
+                      Message sent successfully! I'll get back to you soon.
+                    </div>
+                  )}
+
                   <button
                     type="submit"
-                    className="w-full px-8 py-4 bg-gradient-to-r from-primary to-accent rounded-xl text-white font-semibold hover:shadow-lg hover:shadow-primary/40 transition-all duration-300 hover:scale-[1.02] flex items-center justify-center gap-2 group"
+                    disabled={isSubmitting}
+                    className="w-full px-8 py-4 bg-gradient-to-r from-primary to-accent rounded-xl text-white font-semibold hover:shadow-lg hover:shadow-primary/40 transition-all duration-300 hover:scale-[1.02] flex items-center justify-center gap-2 group disabled:opacity-70 disabled:hover:scale-100 disabled:cursor-not-allowed"
                   >
-                    <Send size={18} className="group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
-                    Send Message
+                    {isSubmitting ? (
+                      <>
+                        <Loader2 size={18} className="animate-spin" />
+                        Sending...
+                      </>
+                    ) : (
+                      <>
+                        <Send size={18} className="group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
+                        Send Message
+                      </>
+                    )}
                   </button>
                 </form>
               </div>
