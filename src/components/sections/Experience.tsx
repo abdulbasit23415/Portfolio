@@ -5,12 +5,13 @@ import { SectionTitle } from '@/components/ui/SectionTitle'
 import { ScrollReveal } from '@/components/animations/ScrollReveal'
 import { Badge } from '@/components/ui/Badge'
 import { GlassCard } from '@/components/ui/GlassCard'
+import { Briefcase } from 'lucide-react'
 
 const experiences = [
   {
     role: 'Junior AI Engineer',
     company: 'Excels Tech Solution LLC',
-    period: '04/2026 - Present',
+    period: '04/2026 – Present',
     description: 'Developing AI-powered web applications and intelligent automation solutions for enterprise clients.',
     achievements: [
       'Deployed AI chatbots and RAG pipelines for customer support',
@@ -47,58 +48,65 @@ export function ExperienceSection() {
           subtitle="A timeline of my professional journey and accomplishments."
         />
 
-        {/* Experience timeline */}
-        <div className="space-y-6">
-          {experiences.map((experience, index) => (
-            <ScrollReveal
-              key={experience.company}
-              direction={index % 2 === 0 ? 'left' : 'right'}
-              delay={index * 100}
-            >
-              <GlassCard>
-                <div className="grid md:grid-cols-3 gap-6">
-                  {/* Period and role */}
-                  <div className="md:border-r border-border/50 pr-6">
-                    <div className="text-sm font-semibold text-accent mb-2">
-                      {experience.period}
+        {/* Timeline */}
+        <div className="relative">
+          {/* Vertical timeline line */}
+          <div className="absolute left-[7px] md:left-1/2 md:-translate-x-px top-0 bottom-0 w-[2px] bg-gradient-to-b from-primary via-accent to-transparent" />
+
+          <div className="space-y-12">
+            {experiences.map((experience, index) => (
+              <ScrollReveal
+                key={experience.company}
+                direction={index % 2 === 0 ? 'left' : 'right'}
+                delay={index * 150}
+              >
+                <div className={`relative flex items-start gap-8 ${index % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'}`}>
+                  {/* Timeline dot */}
+                  <div className="absolute left-0 md:left-1/2 md:-translate-x-1/2 z-10">
+                    <div className="timeline-dot flex items-center justify-center">
+                      <Briefcase className="w-3 h-3 text-white" />
                     </div>
-                    <h3 className="text-xl font-bold text-foreground mb-2">
-                      {experience.role}
-                    </h3>
-                    <p className="text-primary font-semibold">{experience.company}</p>
                   </div>
 
-                  {/* Description and achievements */}
-                  <div className="md:col-span-2">
-                    <p className="text-muted-foreground mb-4">{experience.description}</p>
+                  {/* Content card */}
+                  <div className={`ml-10 md:ml-0 md:w-[calc(50%-2rem)] ${index % 2 === 0 ? '' : 'md:ml-auto'}`}>
+                    <GlassCard className="gradient-left-border">
+                      <div className="space-y-4">
+                        <div>
+                          <span className="text-xs font-semibold text-accent uppercase tracking-widest">{experience.period}</span>
+                          <h3 className="text-xl font-bold text-foreground mt-1">{experience.role}</h3>
+                          <p className="text-primary font-semibold text-sm">{experience.company}</p>
+                        </div>
 
-                    {/* Achievements */}
-                    <div className="mb-4">
-                      <h4 className="font-semibold text-foreground mb-3">Key Achievements:</h4>
-                      <ul className="space-y-2">
-                        {experience.achievements.map((achievement) => (
-                          <li
-                            key={achievement}
-                            className="text-sm text-muted-foreground flex items-start gap-2"
-                          >
-                            <span className="text-accent mt-1">▸</span>
-                            <span>{achievement}</span>
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
+                        <p className="text-muted-foreground text-sm leading-relaxed">{experience.description}</p>
 
-                    {/* Technologies */}
-                    <div className="flex flex-wrap gap-2">
-                      {experience.technologies.map((tech) => (
-                        <Badge key={tech} label={tech} variant="secondary" className="text-xs" />
-                      ))}
-                    </div>
+                        <div>
+                          <h4 className="font-semibold text-foreground text-sm mb-3">Key Achievements:</h4>
+                          <ul className="space-y-2">
+                            {experience.achievements.map((achievement) => (
+                              <li
+                                key={achievement}
+                                className="text-sm text-muted-foreground flex items-start gap-2"
+                              >
+                                <span className="text-accent mt-0.5 text-xs">●</span>
+                                <span>{achievement}</span>
+                              </li>
+                            ))}
+                          </ul>
+                        </div>
+
+                        <div className="flex flex-wrap gap-2 pt-2">
+                          {experience.technologies.map((tech) => (
+                            <Badge key={tech} label={tech} variant="secondary" className="text-xs" />
+                          ))}
+                        </div>
+                      </div>
+                    </GlassCard>
                   </div>
                 </div>
-              </GlassCard>
-            </ScrollReveal>
-          ))}
+              </ScrollReveal>
+            ))}
+          </div>
         </div>
       </div>
     </section>
