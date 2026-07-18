@@ -53,9 +53,9 @@ export function AboutSection() {
                 <div className="w-64 h-64 lg:w-72 lg:h-72 rounded-3xl overflow-hidden relative">
                   <div className="absolute -inset-[2px] rounded-3xl bg-gradient-to-br from-primary via-accent to-fuchsia-400" />
                   <div className="absolute inset-0 rounded-3xl bg-background m-[2px]" />
-                  <div className="absolute inset-[3px] rounded-[calc(1.5rem-3px)] overflow-hidden">
+                  <div className="absolute inset-[3px] rounded-[calc(1.5rem-3px)] overflow-hidden bg-white/5 backdrop-blur-sm">
                     <Image
-                      src="/myimage.jpeg"
+                      src="/profile.png"
                       alt="Abdul Basit"
                       fill
                       className="object-cover"

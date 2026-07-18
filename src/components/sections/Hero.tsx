@@ -132,9 +132,9 @@ export function HeroSection() {
                 {/* Spinning gradient ring */}
                 <div className="absolute -inset-1 rounded-full bg-[conic-gradient(from_0deg,#3b82f6,#06b6d4,#ec4899,#f59e0b,#3b82f6)] animate-ring-spin" />
                 <div className="absolute inset-0 rounded-full bg-background" />
-                <div className="absolute inset-1 rounded-full overflow-hidden">
+                <div className="absolute inset-1 rounded-full overflow-hidden bg-white/5 backdrop-blur-sm">
                   <Image
-                    src="/myimage.jpeg"
+                    src="/profile.png"
                     alt="Abdul Basit - AI Engineer & Full-Stack Developer"
                     fill
                     className="object-cover"
