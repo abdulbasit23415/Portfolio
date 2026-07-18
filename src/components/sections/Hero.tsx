@@ -32,7 +32,7 @@ export function HeroSection() {
       <ParticleField count={50} className="-z-5" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 z-10">
-        <div className="grid lg:grid-cols-[1.1fr_0.9fr] gap-12 items-center min-h-[calc(100vh-7rem)]">
+        <div className="flex flex-col-reverse lg:grid lg:grid-cols-[1.1fr_0.9fr] gap-12 items-center min-h-[calc(100vh-7rem)] py-10 lg:py-0">
           {/* Left content */}
           <div className="space-y-8 animate-fade-in-up">
             <div className="flex items-center gap-2">
@@ -86,30 +86,30 @@ export function HeroSection() {
             </div>
 
             {/* Animated Stats */}
-            <div className="grid grid-cols-3 gap-4 pt-6 border-t border-border/60 max-w-2xl">
-              <div className="rounded-2xl border border-border/70 bg-card/30 px-5 py-4 text-center">
-                <div className="text-2xl md:text-3xl font-bold bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
+            <div className="grid grid-cols-3 gap-2 sm:gap-4 pt-6 border-t border-border/60 max-w-2xl">
+              <div className="rounded-2xl border border-border/70 bg-card/30 px-2 sm:px-5 py-4 text-center">
+                <div className="text-xl md:text-3xl font-bold bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
                   <AnimatedCounter target={10} suffix="+" />
                 </div>
-                <div className="text-sm text-muted-foreground mt-1">AI/ML Projects</div>
+                <div className="text-xs sm:text-sm text-muted-foreground mt-1">AI/ML Projects</div>
               </div>
-              <div className="rounded-2xl border border-border/70 bg-card/30 px-5 py-4 text-center">
-                <div className="text-2xl md:text-3xl font-bold bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
+              <div className="rounded-2xl border border-border/70 bg-card/30 px-2 sm:px-5 py-4 text-center">
+                <div className="text-xl md:text-3xl font-bold bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
                   <AnimatedCounter target={2} suffix="+" />
                 </div>
-                <div className="text-sm text-muted-foreground mt-1">Years Experience</div>
+                <div className="text-xs sm:text-sm text-muted-foreground mt-1">Years Experience</div>
               </div>
-              <div className="rounded-2xl border border-border/70 bg-card/30 px-5 py-4 text-center">
-                <div className="text-2xl md:text-3xl font-bold bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
+              <div className="rounded-2xl border border-border/70 bg-card/30 px-2 sm:px-5 py-4 text-center">
+                <div className="text-xl md:text-3xl font-bold bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
                   <AnimatedCounter target={15} suffix="+" />
                 </div>
-                <div className="text-sm text-muted-foreground mt-1">Tech Skills</div>
+                <div className="text-xs sm:text-sm text-muted-foreground mt-1">Tech Skills</div>
               </div>
             </div>
           </div>
 
           {/* Right side - Profile Photo */}
-          <div className="hidden md:flex items-center justify-center animate-fade-in">
+          <div className="flex items-center justify-center animate-fade-in mb-8 lg:mb-0">
             <div className="relative">
               {/* Decorative rings */}
               <div className="absolute -inset-8 rounded-full border border-primary/20 animate-pulse" />
@@ -128,7 +128,7 @@ export function HeroSection() {
               </div>
 
               {/* Profile image with gradient ring */}
-              <div className="relative w-72 h-72 lg:w-80 lg:h-80 rounded-full overflow-hidden">
+              <div className="relative w-64 h-64 md:w-72 md:h-72 lg:w-80 lg:h-80 rounded-full overflow-hidden">
                 {/* Spinning gradient ring */}
                 <div className="absolute -inset-1 rounded-full bg-[conic-gradient(from_0deg,#3b82f6,#06b6d4,#ec4899,#f59e0b,#3b82f6)] animate-ring-spin" />
                 <div className="absolute inset-0 rounded-full bg-background" />
