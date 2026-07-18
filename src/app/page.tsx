@@ -6,6 +6,7 @@ import { EducationSection } from '@/components/sections/Education'
 import { ProjectsSection } from '@/components/sections/Projects'
 import { ExperienceSection } from '@/components/sections/Experience'
 import { ContactSection } from '@/components/sections/Contact'
+import { ResumeSection } from '@/components/sections/Resume'
 import { Footer } from '@/components/Footer'
 import { ScrollProgress } from '@/components/ui/ScrollProgress'
 import { BackToTop } from '@/components/ui/BackToTop'
@@ -21,6 +22,7 @@ export default function Home() {
       <EducationSection />
       <ProjectsSection />
       <ExperienceSection />
+      <ResumeSection />
       <ContactSection />
       <Footer />
       <BackToTop />

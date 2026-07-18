@@ -1,139 +1,19 @@
 'use client'
 
-import React, { useState, useEffect, useRef } from 'react'
+import React, { useState } from 'react'
 import { SectionTitle } from '@/components/ui/SectionTitle'
 import { ScrollReveal } from '@/components/animations/ScrollReveal'
 import { GlassCard } from '@/components/ui/GlassCard'
 
 const skillsData = {
-  'Programming': [
-    { name: 'Python', level: 90 },
-    { name: 'JavaScript', level: 85 },
-    { name: 'TypeScript', level: 80 },
-    { name: 'Node.js', level: 75 },
-    { name: 'React', level: 85 },
-    { name: 'Next.js', level: 85 },
-  ],
-  'AI & ML': [
-    { name: 'TensorFlow', level: 80 },
-    { name: 'Keras', level: 78 },
-    { name: 'Scikit-learn', level: 85 },
-    { name: 'XGBoost', level: 75 },
-    { name: 'RAG', level: 90 },
-    { name: 'LLMs', level: 88 },
-  ],
-  'Backend & DB': [
-    { name: 'FastAPI', level: 88 },
-    { name: 'Flask', level: 75 },
-    { name: 'PostgreSQL', level: 82 },
-    { name: 'MongoDB', level: 78 },
-    { name: 'Supabase', level: 85 },
-    { name: 'SQLite', level: 80 },
-  ],
-  'Tools & DevOps': [
-    { name: 'n8n', level: 85 },
-    { name: 'Git', level: 90 },
-    { name: 'Docker', level: 70 },
-    { name: 'Vercel', level: 88 },
-    { name: 'Playwright', level: 75 },
-    { name: 'Apify', level: 80 },
-  ],
-  'Data Science': [
-    { name: 'Pandas', level: 90 },
-    { name: 'NumPy', level: 88 },
-    { name: 'Matplotlib', level: 82 },
-    { name: 'Seaborn', level: 80 },
-    { name: 'OpenCV', level: 72 },
-    { name: 'MediaPipe', level: 70 },
-  ],
+  'Programming': ['Python', 'JavaScript', 'TypeScript', 'Node.js', 'React', 'Next.js'],
+  'AI & ML': ['TensorFlow', 'Keras', 'Scikit-learn', 'XGBoost', 'RAG', 'LLMs'],
+  'Backend & DB': ['FastAPI', 'Flask', 'PostgreSQL', 'MongoDB', 'Supabase', 'SQLite'],
+  'Tools & DevOps': ['n8n', 'Git', 'Docker', 'Vercel', 'Playwright', 'Apify'],
+  'Data Science': ['Pandas', 'NumPy', 'Matplotlib', 'Seaborn', 'OpenCV', 'MediaPipe'],
 }
 
 type SkillCategory = keyof typeof skillsData
-
-function CircularProgress({ percentage, name }: { percentage: number; name: string }) {
-  const [animatedPercent, setAnimatedPercent] = useState(0)
-  const ref = useRef<HTMLDivElement>(null)
-  const [hasAnimated, setHasAnimated] = useState(false)
-
-  useEffect(() => {
-    const element = ref.current
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting && !hasAnimated) {
-          setHasAnimated(true)
-          let start = 0
-          const duration = 1200
-          const startTime = performance.now()
-
-          const animate = (currentTime: number) => {
-            const elapsed = currentTime - startTime
-            const progress = Math.min(elapsed / duration, 1)
-            const eased = 1 - Math.pow(1 - progress, 3)
-            start = Math.floor(eased * percentage)
-            setAnimatedPercent(start)
-            if (progress < 1) requestAnimationFrame(animate)
-          }
-
-          requestAnimationFrame(animate)
-        }
-      },
-      { threshold: 0.3 }
-    )
-    if (element) observer.observe(element)
-    return () => {
-      if (element) observer.unobserve(element)
-    }
-  }, [percentage, hasAnimated])
-
-  // Reset animation when category changes
-  useEffect(() => {
-    setHasAnimated(false)
-    setAnimatedPercent(0)
-  }, [name])
-
-  const radius = 36
-  const circumference = 2 * Math.PI * radius
-  const strokeDashoffset = circumference - (animatedPercent / 100) * circumference
-
-  return (
-    <div ref={ref} className="flex flex-col items-center gap-3">
-      <div className="relative w-24 h-24">
-        <svg className="w-24 h-24 -rotate-90" viewBox="0 0 80 80">
-          <circle
-            cx="40"
-            cy="40"
-            r={radius}
-            fill="none"
-            stroke="rgba(255,255,255,0.06)"
-            strokeWidth="5"
-          />
-          <circle
-            cx="40"
-            cy="40"
-            r={radius}
-            fill="none"
-            stroke="url(#gradient)"
-            strokeWidth="5"
-            strokeLinecap="round"
-            strokeDasharray={circumference}
-            strokeDashoffset={strokeDashoffset}
-            style={{ transition: 'stroke-dashoffset 1.2s cubic-bezier(0.4, 0, 0.2, 1)' }}
-          />
-          <defs>
-            <linearGradient id="gradient" x1="0%" y1="0%" x2="100%" y2="100%">
-              <stop offset="0%" stopColor="#3b82f6" />
-              <stop offset="100%" stopColor="#06b6d4" />
-            </linearGradient>
-          </defs>
-        </svg>
-        <div className="absolute inset-0 flex items-center justify-center">
-          <span className="text-sm font-bold text-foreground">{animatedPercent}%</span>
-        </div>
-      </div>
-      <span className="text-sm font-semibold text-foreground text-center">{name}</span>
-    </div>
-  )
-}
 
 export function SkillsSection() {
   const [activeCategory, setActiveCategory] = useState<SkillCategory>('Programming')
@@ -167,16 +47,18 @@ export function SkillsSection() {
             ))}
           </div>
 
-          {/* Circular progress grid */}
-          <div className="grid grid-cols-3 sm:grid-cols-3 md:grid-cols-6 gap-6 md:gap-8">
+          {/* Skills grid */}
+          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-4">
             {skillsData[activeCategory].map((skill, index) => (
               <ScrollReveal
-                key={`${activeCategory}-${skill.name}`}
+                key={`${activeCategory}-${skill}`}
                 direction="up"
                 delay={index * 80}
                 className="flex justify-center"
               >
-                <CircularProgress percentage={skill.level} name={skill.name} />
+                <GlassCard tilt className="w-full text-center py-5">
+                  <p className="font-semibold text-foreground text-sm">{skill}</p>
+                </GlassCard>
               </ScrollReveal>
             ))}
           </div>
