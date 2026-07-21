@@ -81,7 +81,7 @@ export function AboutSection() {
                 where he specialized in machine learning, statistical modeling, and AI integration.
                 His work spans deploying customer-support chatbots, building WhatsApp Business API
                 automations, optimizing PostgreSQL databases, and integrating LLMs for intelligent
-                document processing — delivering measurable results for enterprise clients.
+                document processing, delivering measurable results for enterprise clients.
               </p>
 
               <p className="text-lg text-muted-foreground leading-relaxed">

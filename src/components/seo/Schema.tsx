@@ -70,7 +70,7 @@ export function Schema() {
     '@id': 'https://abdulbasit23415.vercel.app/#website',
     url: 'https://abdulbasit23415.vercel.app',
     name: 'Abdul Basit Portfolio',
-    description: 'Portfolio of Abdul Basit — AI Engineer & Full-Stack Developer specializing in LLMs, RAG pipelines, and modern web applications.',
+    description: 'Portfolio of Abdul Basit: AI Engineer & Full-Stack Developer specializing in LLMs, RAG pipelines, and modern web applications.',
     author: {
       '@id': 'https://abdulbasit23415.vercel.app/#person',
     },
@@ -82,7 +82,7 @@ export function Schema() {
     '@type': 'ProfilePage',
     '@id': 'https://abdulbasit23415.vercel.app/#profilepage',
     url: 'https://abdulbasit23415.vercel.app',
-    name: 'Abdul Basit — AI Engineer & Full-Stack Developer Portfolio',
+    name: 'Abdul Basit: AI Engineer & Full-Stack Developer Portfolio',
     isPartOf: {
       '@id': 'https://abdulbasit23415.vercel.app/#website',
     },
