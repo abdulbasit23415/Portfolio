@@ -56,7 +56,7 @@ export function AboutSection() {
                   <div className="absolute inset-[3px] rounded-[calc(1.5rem-3px)] overflow-hidden bg-white/5 backdrop-blur-sm">
                     <Image
                       src="/profile-v2.png"
-                      alt="Abdul Basit"
+                      alt="Abdul Basit - AI Engineer and Full-Stack Developer at Excels Tech Solution"
                       fill
                       className="object-cover"
                     />
@@ -72,7 +72,7 @@ export function AboutSection() {
           <ScrollReveal direction="right">
             <div className="space-y-6">
               <p className="text-lg text-muted-foreground leading-relaxed">
-                I&apos;m a dedicated AI engineer and full-stack developer with hands-on experience in building intelligent, data-driven applications. Currently working at <span className="text-accent font-semibold">Excels Tech Solution LLC</span>, where I develop AI-powered platforms, RAG pipelines, and automation solutions using Python, Next.js, and LLMs.
+                Abdul Basit is a dedicated AI engineer and full-stack developer with hands-on experience in building intelligent, data-driven applications. Currently working at <span className="text-accent font-semibold">Excels Tech Solution LLC</span>, where I develop AI-powered platforms, RAG pipelines, and automation solutions using Python, Next.js, and LLMs.
               </p>
 
               <p className="text-lg text-muted-foreground leading-relaxed">
