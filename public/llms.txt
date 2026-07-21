@@ -1,0 +1,41 @@
+# llms.txt — Abdul Basit Portfolio
+# https://abdulbasit23415.vercel.app
+# This file helps AI crawlers and language models understand this website.
+
+## Site
+- Title: Abdul Basit — AI Engineer & Full-Stack Developer Portfolio
+- URL: https://abdulbasit23415.vercel.app
+- Language: English
+- Author: Abdul Basit
+- Contact: kashifabdulbasit@gmail.com
+- Location: Lahore, Pakistan
+
+## About
+Abdul Basit is an AI Engineer and Full-Stack Developer based in Lahore, Pakistan, specializing in Large Language Models (LLMs), Retrieval-Augmented Generation (RAG) pipelines, and intelligent web applications. He currently works at Excels Tech Solution LLC, developing AI-powered platforms, chatbots, and automation systems. He holds a BS in Data Science from Superior University (2022–2026).
+
+## Skills
+- AI & Machine Learning: TensorFlow, Keras, Scikit-learn, XGBoost, RAG, LLMs, OpenCV, MediaPipe
+- Full-Stack: Next.js, React, TypeScript, Python, FastAPI, Flask, Node.js
+- Databases: PostgreSQL, MongoDB, Supabase, SQLite, Pinecone
+- Automation & DevOps: n8n, Docker, Git, Vercel, Playwright, Apify
+- Data Science: Pandas, NumPy, Matplotlib, Seaborn
+
+## Experience
+- Junior AI Engineer @ Excels Tech Solution LLC (04/2026 – Present)
+- Software Engineer @ Coding Caliber (3 Months)
+
+## Projects
+- AI Power Email: AI-powered email marketing platform (https://aipoweremail.com/)
+- AI RAG Chatbot: Intelligent customer support using RAG + LLMs (https://airagchatbot.com)
+- WhatsApp Business Chatbot: AI chatbot with webhook automation
+- Hand Gesture Recognition: Real-time computer vision system using MediaPipe and CNNs
+- Crypto Price Prediction: ML forecasting using LSTM, Random Forest, ANN
+
+## Links
+- GitHub: https://github.com/abdulbasit23415
+- LinkedIn: https://linkedin.com/in/abdulbasit-kashif0003
+- Email: mailto:kashifabdulbasit@gmail.com
+
+## Permissions
+User-agent: *
+Allow: /

@@ -103,7 +103,7 @@ export function ProjectsSection() {
     : allProjects.filter((p) => p.category === activeFilter)
 
   return (
-    <section id="projects" className="py-20 md:py-32 bg-secondary/5 relative overflow-hidden">
+    <section id="projects" aria-label="What projects has Abdul Basit built?" className="py-20 md:py-32 bg-secondary/5 relative overflow-hidden">
       {/* Background decoration */}
       <div className="absolute bottom-0 right-0 w-96 h-96 bg-accent/5 rounded-full blur-3xl -z-10" />
 
