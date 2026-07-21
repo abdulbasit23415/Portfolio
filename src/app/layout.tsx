@@ -2,6 +2,7 @@ import { Analytics } from '@vercel/analytics/next'
 import type { Metadata, Viewport } from 'next'
 import { Inter, Space_Grotesk } from 'next/font/google'
 import './globals.css'
+import { Schema } from '@/components/seo/Schema'
 
 const inter = Inter({
   subsets: ['latin'],
@@ -14,12 +15,16 @@ const spaceGrotesk = Space_Grotesk({
 })
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://abdulbasit23415.vercel.app'),
   title: 'Abdul Basit | AI Engineer & Full-Stack Developer',
   description: 'AI Engineer and Full-Stack Developer specializing in LLMs, RAG pipelines, machine learning, and modern web applications. Explore my portfolio of AI-powered projects.',
+  keywords: ['AI Engineer', 'Full-Stack Developer', 'Data Scientist', 'Machine Learning', 'Next.js', 'Python', 'Abdul Basit'],
   generator: 'Next.js',
   openGraph: {
     title: 'Abdul Basit | AI Engineer & Full-Stack Developer',
     description: 'AI Engineer and Full-Stack Developer specializing in LLMs, RAG pipelines, machine learning, and modern web applications.',
+    url: 'https://abdulbasit23415.vercel.app',
+    siteName: 'Abdul Basit Portfolio',
     type: 'website',
   },
 }
@@ -43,6 +48,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={`dark ${inter.variable} ${spaceGrotesk.variable}`}>
+      <head>
+        <Schema />
+      </head>
       <body className="antialiased bg-background text-foreground font-sans noise-overlay">
         {children}
         {process.env.NODE_ENV === 'production' && <Analytics />}
