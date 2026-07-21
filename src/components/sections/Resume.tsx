@@ -28,7 +28,7 @@ export function ResumeSection() {
 
             <h3 className="text-2xl font-bold text-foreground mb-3">Abdul Basit</h3>
             <p className="text-muted-foreground mb-8 max-w-md mx-auto">
-              AI Engineer & Full-Stack Developer — LLMs, RAG Pipelines, Next.js, Python, and more.
+              AI Engineer & Full-Stack Developer: LLMs, RAG Pipelines, Next.js, Python, and more.
             </p>
 
             {/* Quick highlights */}

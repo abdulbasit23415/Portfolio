@@ -19,6 +19,8 @@ export const metadata: Metadata = {
   title: 'Abdul Basit | AI Engineer & Full-Stack Developer',
   description: 'AI Engineer and Full-Stack Developer specializing in LLMs, RAG pipelines, machine learning, and modern web applications. Explore my portfolio of AI-powered projects.',
   keywords: ['AI Engineer', 'Full-Stack Developer', 'Data Scientist', 'Machine Learning', 'Next.js', 'Python', 'Abdul Basit'],
+  authors: [{ name: 'Abdul Basit', url: 'https://abdulbasit23415.vercel.app' }],
+  creator: 'Abdul Basit',
   generator: 'Next.js',
   openGraph: {
     title: 'Abdul Basit | AI Engineer & Full-Stack Developer',

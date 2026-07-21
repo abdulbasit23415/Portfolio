@@ -33,7 +33,7 @@ const highlights = [
 
 export function AboutSection() {
   return (
-    <section id="about" className="py-20 md:py-32 bg-secondary/5 relative overflow-hidden">
+    <section id="about" aria-label="Who is Abdul Basit?" className="py-20 md:py-32 bg-secondary/5 relative overflow-hidden">
       {/* Background decoration */}
       <div className="absolute top-1/2 right-0 w-96 h-96 bg-primary/5 rounded-full blur-3xl -z-10" />
       <div className="absolute bottom-0 left-0 w-72 h-72 bg-accent/5 rounded-full blur-3xl -z-10" />
@@ -56,7 +56,7 @@ export function AboutSection() {
                   <div className="absolute inset-[3px] rounded-[calc(1.5rem-3px)] overflow-hidden bg-white/5 backdrop-blur-sm">
                     <Image
                       src="/profile-v2.png"
-                      alt="Abdul Basit"
+                      alt="Abdul Basit - AI Engineer and Full-Stack Developer at Excels Tech Solution"
                       fill
                       className="object-cover"
                     />
@@ -72,11 +72,20 @@ export function AboutSection() {
           <ScrollReveal direction="right">
             <div className="space-y-6">
               <p className="text-lg text-muted-foreground leading-relaxed">
-                I&apos;m a dedicated AI engineer and full-stack developer with hands-on experience in building intelligent, data-driven applications. Currently working at <span className="text-accent font-semibold">Excels Tech Solution LLC</span>, where I develop AI-powered platforms, RAG pipelines, and automation solutions using Python, Next.js, and LLMs.
+                Abdul Basit is an AI Engineer and Full-Stack Developer based in Lahore, Pakistan,
+                with hands-on experience building intelligent, production-ready applications.
+                Currently working at <span className="text-accent font-semibold">Excels Tech Solution LLC</span>,
+                he develops AI-powered platforms, Retrieval-Augmented Generation (RAG) pipelines,
+                and workflow automation systems using Python, FastAPI, Next.js, and Large Language
+                Models (LLMs). He holds a BS in Data Science from Superior University (2022–2026),
+                where he specialized in machine learning, statistical modeling, and AI integration.
+                His work spans deploying customer-support chatbots, building WhatsApp Business API
+                automations, optimizing PostgreSQL databases, and integrating LLMs for intelligent
+                document processing, delivering measurable results for enterprise clients.
               </p>
 
               <p className="text-lg text-muted-foreground leading-relaxed">
-                My expertise spans machine learning, data science, backend optimization, and modern web technologies. I specialize in integrating Large Language Models, implementing Retrieval-Augmented Generation, and building scalable production systems.
+                His expertise spans machine learning, data science, backend optimization, and modern web technologies. He specializes in integrating Large Language Models, implementing Retrieval-Augmented Generation, and building scalable production systems.
               </p>
 
               {/* Stats row */}

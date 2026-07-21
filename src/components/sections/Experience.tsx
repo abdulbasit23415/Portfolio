@@ -38,7 +38,7 @@ const experiences = [
 
 export function ExperienceSection() {
   return (
-    <section id="experience" className="py-20 md:py-32 relative overflow-hidden">
+    <section id="experience" aria-label="Where has Abdul Basit worked?" className="py-20 md:py-32 relative overflow-hidden">
       {/* Background decoration */}
       <div className="absolute top-1/2 left-0 w-96 h-96 bg-primary/5 rounded-full blur-3xl -z-10" />
 

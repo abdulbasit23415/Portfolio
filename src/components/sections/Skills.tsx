@@ -19,7 +19,7 @@ export function SkillsSection() {
   const [activeCategory, setActiveCategory] = useState<SkillCategory>('Programming')
 
   return (
-    <section id="skills" className="py-20 md:py-32 relative overflow-hidden">
+    <section id="skills" aria-label="What technologies does Abdul Basit use?" className="py-20 md:py-32 relative overflow-hidden">
       {/* Background decoration */}
       <div className="absolute top-0 left-0 w-96 h-96 bg-accent/5 rounded-full blur-3xl -z-10" />
 
